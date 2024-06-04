@@ -2,9 +2,9 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 
 from functions.BlockProgramm_Tab import BlockProgramm_Tab
-from functions.BlockСonsole_Tab import BlockСonsole_Tab
+from functions.BlockConsole_Tab import BlockConsole_Tab
 from functions.Cert_Tab import Cert_Tab
-from functions.ConrtolUSB_Tab import ConrtolUSB_Tab
+from functions.ControlUSB_Tab import ControlUSB_Tab
 from functions.DelPackage_Tab import DelPackage_Tab
 from functions.DeleteTempFiles_Tab import DeleteTempFiles_Tab
 from functions.MountNFS_Tab import MountNFS_Tab
@@ -29,7 +29,7 @@ class Control_Tab(QWidget):
 
         script = Script_Tab()
         password = RulePassword_Tab()
-        usb = ConrtolUSB_Tab()
+        usb = ControlUSB_Tab()
         cert = Cert_Tab()
         update = Update_Tab()
         tmp = DeleteTempFiles_Tab()
@@ -39,7 +39,7 @@ class Control_Tab(QWidget):
         shortcut = Shortcut_Tab()
         image = SetImage_Tab()
         sessions = Sessinons_Tab()
-        console = BlockСonsole_Tab()
+        console = BlockConsole_Tab()
         prog = BlockProgramm_Tab()
         repo = Repository_Tab()
         pac = PACGeneratorApp()

@@ -1,4 +1,5 @@
 import json
+import os
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
@@ -47,6 +48,9 @@ class TreeEditor(QWidget):
         self.tree.clear()
 
     def loadData(self):
+        if not os.path.exists('structure.json'):
+            self.create_initial_structure()
+
         try:
             with open('structure.json', 'r', encoding='utf-8') as file:
                 data = json.load(file)
@@ -54,6 +58,11 @@ class TreeEditor(QWidget):
         except Exception as e:
             QMessageBox.warning(self, "Ошибка при загрузке данных", str(e))
             self.refreshData()
+
+    def create_initial_structure(self):
+        initial_data = {"items": []}
+        with open('structure.json', 'w', encoding='utf-8') as file:
+            json.dump(initial_data, file, indent=4, ensure_ascii=False)
 
     def populateTree(self, items, parent=None):
         for item in items:

@@ -4,12 +4,15 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
+# Класс BlockConsole отвечает за блокировку и разблокировку терминалов пользователей
 class BlockConsole(QWidget):
+    # Конструктор класса, инициализирует виджет дерева
     def __init__(self, tree_widget):
         super().__init__()
         self.tree_widget = tree_widget
         self.init_ui()
 
+    # Метод для инициализации пользовательского интерфейса
     def init_ui(self):
         self.setWindowTitle('Управление терминалом')
 
@@ -40,17 +43,21 @@ class BlockConsole(QWidget):
         layout.setAlignment(Qt.AlignTop)
         self.setLayout(layout)
 
+    # Метод для блокировки терминала
     def block_terminal(self):
         self.block_button.setEnabled(False)
         self.toggle_shell('/usr/sbin/nologin')
 
+    # Метод для разблокировки терминала
     def unblock_terminal(self):
         self.unblock_button.setEnabled(False)
         self.toggle_shell('/bin/bash')
 
+    # Метод для изменения оболочки пользователя
     def toggle_shell(self, new_shell):
         user_name = self.username_input.text()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
+        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
         if hosts and user_name:
             salt_command = f"salt -L '{hosts}' cmd.run_stdout 'sudo usermod -s {new_shell} {user_name} && echo \"Команда успешно выполнена\" || echo \"Произошла ошибка\"'"
             self.thread = CommandRunner(salt_command, self)
@@ -59,6 +66,7 @@ class BlockConsole(QWidget):
         else:
             self.result_label.setText("Выберите компьютер и имя пользователя")
 
+    # Метод для отображения результата выполнения команды
     def show_result(self, success, output, return_code):
         if success:
             self.result_label.setText(f"Вывод команды:\n{output}\n\nКод завершения: {return_code}")
@@ -69,6 +77,7 @@ class BlockConsole(QWidget):
         self.block_button.setEnabled(True)
         self.unblock_button.setEnabled(True)
 
+    # Метод для получения выбранных элементов из дерева
     def getSelectedItems(self, parent_item):
         selected_items = []
         for i in range(parent_item.childCount()):

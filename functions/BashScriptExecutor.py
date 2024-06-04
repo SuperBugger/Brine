@@ -9,12 +9,15 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
+# Класс BashScriptExecutor отвечает за загрузку и выполнение bash-скриптов через GUI
 class BashScriptExecutor(QWidget):
+    # Конструктор класса, инициализирует виджет дерева
     def __init__(self, tree_widget):
         super().__init__()
         self.tree_widget = tree_widget
         self.init_ui()
 
+    # Метод для инициализации пользовательского интерфейса
     def init_ui(self):
         layout = QVBoxLayout()
 
@@ -44,9 +47,12 @@ class BashScriptExecutor(QWidget):
         layout.addStretch()
         self.setLayout(layout)
 
+    # Метод для отображения результата выполнения команды
     def show_result(self, success, output, return_code):
         if success:
-            pattern = r"(\w+):\s*(?:-{10}\s*pid:.*?stdout:\s*(______\s*.*?______)|Minion did not return. \[Not connected\])"
+            # Регулярное выражение для извлечения нужных данных из вывода команды
+            pattern = (r"(\w+):\s*(?:-{10}\s*pid:.*?stdout:\s*(______\s*.*?______)|Minion did not return. \[Not "
+                       r"connected\])")
             matches = re.findall(pattern, output, re.DOTALL)
             output = ""
             for name, stdout in matches:
@@ -65,10 +71,10 @@ class BashScriptExecutor(QWidget):
         self.scroll_area.setVisible(True)
         self.execute_button.setEnabled(True)
 
-        self.result_label.setText(result_text)
-        self.scroll_area.setVisible(True)
+        # Исправлено дублирование
         self.adjust_scroll_area_height()
 
+    # Метод для автоматической настройки высоты области прокрутки
     def adjust_scroll_area_height(self):
         font_metrics = QFontMetrics(self.result_label.font())
         width = self.result_label.width()
@@ -77,6 +83,7 @@ class BashScriptExecutor(QWidget):
         self.scroll_area.setMinimumHeight(rect.height())
         self.scroll_area.setMaximumHeight(rect.height())
 
+    # Метод для загрузки скрипта с файловой системы
     def load_script(self):
         options = QFileDialog.Options()
         script_file, _ = QFileDialog.getOpenFileName(self, 'Выберите файл скрипта', '',
@@ -87,6 +94,7 @@ class BashScriptExecutor(QWidget):
             self.script_label.setText(f"Загружен скрипт: {os.path.basename(self.script_path)}")
             self.execute_button.setVisible(True)
 
+    # Метод для выполнения загруженного скрипта
     def execute_script(self):
         if self.script_path:
             self.script_filename = os.path.basename(self.script_path)
@@ -95,7 +103,8 @@ class BashScriptExecutor(QWidget):
             self.destination_path = os.path.join(saltstack_path, self.script_filename)
             shutil.copy(self.script_path, self.destination_path)
 
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
+            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cmd.script salt://{self.script_filename}"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)
@@ -104,6 +113,7 @@ class BashScriptExecutor(QWidget):
         else:
             self.script_label.setText("Выберите файл скрипта для выполнения.")
 
+    # Метод для получения выбранных элементов из дерева
     def getSelectedItems(self, parent_item):
         selected_items = []
         for i in range(parent_item.childCount()):

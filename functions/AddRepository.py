@@ -4,7 +4,9 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
+# Класс AddRepository отвечает за добавление репозитория через GUI
 class AddRepository(QWidget):
+    # Конструктор класса, инициализирует виджеты
     def __init__(self, text_edit, add_button, tree_widget, label, scroll_area):
         super(AddRepository, self).__init__()
         self.text_edit = text_edit
@@ -13,16 +15,22 @@ class AddRepository(QWidget):
         self.label = label
         self.scroll_area = scroll_area
 
+    # Метод для включения/выключения кнопки в зависимости от наличия текста
     def enable_button(self):
         self.add_button.setEnabled(bool(self.text_edit.toPlainText().strip()))
 
+    # Метод для выполнения команды и вывода результата
     def print_text(self):
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
-        salt_command = f"salt -L '{hosts}' cmd.run_stdout 'echo \"{self.text_edit.toPlainText()}\" >> /etc/apt/sources.list && cat /etc/apt/sources.list'"
+        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        salt_command = (f"salt -L '{hosts}' cmd.run_stdout 'echo \"{self.text_edit.toPlainText()}\" >> "
+                        f"/etc/apt/sources.list && cat /etc/apt/sources.list'")
+        self.text_edit.clear()
         self.thread = CommandRunner(salt_command, self)
-        self.thread.finished.connect(self.showresult)
+        self.thread.finished.connect(self.showResult)
         self.thread.start()
 
+    # Метод для получения выбранных элементов из дерева
     def getSelectedItems(self, parent_item):
         selected_items = []
         for i in range(parent_item.childCount()):
@@ -32,9 +40,10 @@ class AddRepository(QWidget):
             elif child_item.childCount() > 0:
                 selected_items.extend(self.getSelectedItems(child_item))
         return selected_items
-        self.text_edit.clear()
+        # Исправлено: перемещено self.text_edit.clear() в print_text
 
-    def showresult(self, success, output, return_code):
+        # Метод для отображения результата выполнения команды
+    def showResult(self, success, output, return_code):
         self.label.setVisible(True)
         if success:
             self.label.setText(

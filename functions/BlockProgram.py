@@ -4,12 +4,15 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
-class BlockProgramm(QWidget):
+# Класс BlockProgram управляет блокировкой и разблокировкой программ для пользователей
+class BlockProgram(QWidget):
+    # Конструктор класса, инициализирует виджет дерева
     def __init__(self, tree_widget):
         super().__init__()
         self.tree_widget = tree_widget
         self.init_ui()
 
+    # Метод для инициализации пользовательского интерфейса
     def init_ui(self):
         layout = QVBoxLayout()
 
@@ -27,12 +30,12 @@ class BlockProgramm(QWidget):
 
         self.blockprog_button = QPushButton('Заблокировать пользователю выбранные программы')
         self.blockprog_button.setVisible(False)
-        self.blockprog_button.clicked.connect(self.blockprog_user)
+        self.blockprog_button.clicked.connect(self.blockProg_user)
         layout.addWidget(self.blockprog_button)
 
         self.unblockprog_button = QPushButton('Разблокировать пользователю выбранные программы')
         self.unblockprog_button.setVisible(False)
-        self.unblockprog_button.clicked.connect(self.unblockprog_user)
+        self.unblockprog_button.clicked.connect(self.unblockProg_user)
         layout.addWidget(self.unblockprog_button)
 
         self.scroll_area = QScrollArea()
@@ -47,14 +50,17 @@ class BlockProgramm(QWidget):
         layout.setAlignment(Qt.AlignTop)
         self.setLayout(layout)
 
+    # Метод для поиска установленных пакетов на выбранных хостах
     def search_repo_user(self):
         self.btn_search_repo_user.setEnabled(False)
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
+        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
         salt_command = f"salt -L '{hosts}' cmd.run_stdout 'dpkg --get-selections'"
         self.thread = CommandRunner(salt_command, self)
         self.thread.finished.connect(self.showSelectedItems)
         self.thread.start()
 
+    # Метод для отображения установленных пакетов
     def showSelectedItems(self, success, output, return_code):
         self.btn_search_repo_user.setEnabled(True)
         self.result_list.clear()
@@ -75,6 +81,7 @@ class BlockProgramm(QWidget):
         self.unblockprog_button.setVisible(True)
         self.user_input.setVisible(True)
 
+    # Метод для отображения результата выполнения команды
     def show_result(self, success, output, return_code):
         if success:
             self.result_label.setText(
@@ -86,7 +93,8 @@ class BlockProgramm(QWidget):
         self.blockprog_button.setEnabled(True)
         self.unblockprog_button.setEnabled(True)
 
-    def blockprog_user(self):
+    # Метод для блокировки программ для пользователя
+    def blockProg_user(self):
         self.blockprog_button.setEnabled(False)
         user_name = self.user_input.text()
         selected_items = [self.result_list.item(i).text().split(' - ')[0] for i in range(self.result_list.count()) if
@@ -98,7 +106,8 @@ class BlockProgramm(QWidget):
             self.result_list.clear()
             self.result_list.addItem(item)
             commands = ' '.join([f'$(readlink -f $(which {item}))' for item in selected_items])
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
+            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cmd.run 'setfacl -m u:{user_name}:--- {commands}  &&  getfacl {commands} | grep {user_name} || echo \"Произошла ошибка\"'"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)
@@ -108,7 +117,8 @@ class BlockProgramm(QWidget):
             self.blockprog_button.setEnabled(True)
             self.scroll_area.setVisible(True)
 
-    def unblockprog_user(self):
+    # Метод для разблокировки программ для пользователя
+    def unblockProg_user(self):
         user_name = self.user_input.text()
         selected_items = [self.result_list.item(i).text().split(' - ')[0] for i in range(self.result_list.count()) if
                           self.result_list.item(i).checkState() == Qt.Checked]
@@ -128,6 +138,7 @@ class BlockProgramm(QWidget):
             self.result_label.setText("Выберите пакеты для установки и имя пользователя")
             self.scroll_area.setVisible(True)
 
+    # Метод для получения выбранных элементов из дерева
     def getSelectedItems(self, parent_item):
         selected_items = []
         for i in range(parent_item.childCount()):

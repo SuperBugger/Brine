@@ -3,7 +3,9 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import *
 
 
+# Класс CustomHeader добавляет кнопку обновления в заголовок таблицы
 class CustomHeader(QHeaderView):
+    # Конструктор класса, инициализирует интерфейс
     def __init__(self, orientation, parent_widget, parent=None):
         super(CustomHeader, self).__init__(orientation, parent)
 
@@ -24,5 +26,6 @@ class CustomHeader(QHeaderView):
         self.layout.addWidget(self.button)
         self.layout.setContentsMargins(0, 0, 0, 0)
 
+    # Метод для обработки нажатия на кнопку обновления
     def on_button_clicked(self):
         self.parent_widget.get_structure()

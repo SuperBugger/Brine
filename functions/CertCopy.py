@@ -7,12 +7,15 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
+# Класс CertCopy управляет копированием сертификатов на удаленные хосты
 class CertCopy(QWidget):
+    # Конструктор класса, инициализирует интерфейс
     def __init__(self, tree_widget):
         super().__init__()
         self.tree_widget = tree_widget
         self.init_ui()
 
+    # Метод для инициализации пользовательского интерфейса
     def init_ui(self):
         layout = QVBoxLayout()
 
@@ -43,6 +46,7 @@ class CertCopy(QWidget):
         layout.setAlignment(Qt.AlignTop)
         self.setLayout(layout)
 
+    # Метод для отображения результата выполнения команды
     def show_result(self, success, output, return_code):
         if success:
             result_text = f"Вывод команды:\n{output}\n\nКод завершения: {return_code}"
@@ -55,6 +59,7 @@ class CertCopy(QWidget):
 
         self.scroll_area.setVisible(True)
 
+    # Метод для выбора файла сертификата
     def selectCertificate(self):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
@@ -69,20 +74,22 @@ class CertCopy(QWidget):
             self.copy_button.setEnabled(False)
             self.label.setText("Файл не выбран")
 
+    # Метод для копирования сертификата на удаленные хосты
     def copyCertificate(self):
         if self.cert_path:
             cert_filename = os.path.basename(self.cert_path)
-            saltstack_path = '/srv/salt/'
+            saltStack_path = '/srv/salt/'
 
-            self.destination_path = os.path.join(saltstack_path, cert_filename)
+            self.destination_path = os.path.join(saltStack_path, cert_filename)
             shutil.copy(self.cert_path, self.destination_path)
-
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
+            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cp.get_file salt://{cert_filename} /etc/ssl/certs/"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)
             self.thread.start()
 
+    # Метод для получения выбранных элементов из дерева
     def getSelectedItems(self, parent_item):
         selected_items = []
         for i in range(parent_item.childCount()):

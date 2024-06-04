@@ -4,8 +4,10 @@ from PyQt5.QtWidgets import *
 from functions.CommandRunner import CommandRunner
 
 
+# Класс BlockSession управляет блокировкой сеансов на удаленных хостах
 class BlockSession(QWidget):
 
+    # Конструктор класса, инициализирует интерфейс
     def __init__(self):
         super().__init__()
 
@@ -37,6 +39,7 @@ class BlockSession(QWidget):
         layout.setAlignment(Qt.AlignTop)
         self.setLayout(layout)
 
+    # Метод для отображения результата выполнения команды
     def showSelectedItems(self, success, output, return_code):
         if success:
             self.label.setText(
@@ -46,6 +49,7 @@ class BlockSession(QWidget):
         self.scroll_area.setVisible(True)
         self.label.setAlignment(Qt.AlignLeft)
 
+    # Метод для блокировки сеанса на указанном хосте
     def block_session(self):
         host = self.host_input.text()
         session_id = '{"session_id":' + self.session_id_input.text() + '}'

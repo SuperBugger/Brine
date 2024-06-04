@@ -4,77 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78cc740a-5817-4a2b-9d75-b95b98daffe0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Brine.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Brine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Color.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TabBar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TabWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/AddRepository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BashScriptExecutor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BlockConsole.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BlockProgramm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BlockProgramm_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BlockSession.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/BlockСonsole_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/CertCopy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Cert_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/CommandRunner.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/ConfigChanger_Subtab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/ConrtolUSB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/ConrtolUSB_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Control_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/CustomHeader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/CustomTreeWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/DelPackage_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/DeletePackage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/DeleteTempFiles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/DeleteTempFiles_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/GetInfoSessinonWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Getsessions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Initialization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/InstallClient_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Keys_Subtab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/LoginDialog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/MountNFSWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/MountNFS_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/PACGeneratorApp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/PackageInstal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/PackageInstall_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/PrinterConnection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Printer_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Repository_Disconnect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Repository_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Repository_Сonnecnt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Repositorynppct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/RulePassword.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/RulePassword_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Schedule.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/ScreenLock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/ScreenLock_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Script_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/SelectedItemListWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Sessinons_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/SetImage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/SetImage_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/SetProxy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/SetProxy_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Settings_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Shortcut.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Shortcut_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Timetable_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/TreeEditor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/TreeListWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Update.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/Update_Tab.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/scenarioWidget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="78cc740a-5817-4a2b-9d75-b95b98daffe0" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/functions/KeysWindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Brine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/AddRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/AddRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BashScriptExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BashScriptExecutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockConsole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockProgramm.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockProgram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockProgramm_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockProgramm_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockSession.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockSession.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockСonsole_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockConsole_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/CertCopy.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CertCopy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Cert_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Cert_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/CommandRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CommandRunner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/ConfigChanger_Subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ConfigChanger_Subtab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/ConrtolUSB.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ControlUSB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/ConrtolUSB_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ControlUSB_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Control_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Control_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/CustomHeader.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CustomHeader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/CustomTreeWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CustomTreeWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/TreeEditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/TreeEditor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/TreeListWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/TreeListWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,9 +43,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SuperBugger&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SuperBugger/Brine&quot;,
+    &quot;accountId&quot;: &quot;51b2dd7b-db70-4c15-8329-a09018f27c6a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2hN2eQXKceKnl8vDtQXAB4s7TGd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -104,6 +68,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Brine.executor": "Debug",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -130,11 +96,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717420308319</updated>
-      <workItem from="1717420309996" duration="4757000" />
+      <workItem from="1717420309996" duration="5202000" />
+      <workItem from="1717487779564" duration="1604000" />
+      <workItem from="1717489637710" duration="6566000" />
+      <workItem from="1717497723212" duration="12934000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1717425511958</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717425511958</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Brine$main.coverage" NAME="main Coverage Results" MODIFIED="1717512157218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Brine$Brine.coverage" NAME="Brine Coverage Results" MODIFIED="1717490482555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
