@@ -21,8 +21,7 @@ class AddRepository(QWidget):
 
     # Метод для выполнения команды и вывода результата
     def print_text(self):
-        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
         salt_command = (f"salt -L '{hosts}' cmd.run_stdout 'echo \"{self.text_edit.toPlainText()}\" >> "
                         f"/etc/apt/sources.list && cat /etc/apt/sources.list'")
         self.text_edit.clear()

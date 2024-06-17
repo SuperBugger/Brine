@@ -82,8 +82,7 @@ class CertCopy(QWidget):
 
             self.destination_path = os.path.join(saltStack_path, cert_filename)
             shutil.copy(self.cert_path, self.destination_path)
-            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cp.get_file salt://{cert_filename} /etc/ssl/certs/"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)

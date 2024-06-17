@@ -4,29 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78cc740a-5817-4a2b-9d75-b95b98daffe0" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/functions/KeysWindow.py" afterDir="false" />
+    <list default="true" id="78cc740a-5817-4a2b-9d75-b95b98daffe0" name="Changes" comment="some comments were added and it finally works!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Brine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/AddRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/AddRepository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/BashScriptExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BashScriptExecutor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/BlockConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockConsole.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/BlockProgramm.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockProgram.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/BlockProgramm_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockProgramm_Tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/BlockSession.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockSession.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/BlockСonsole_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockConsole_Tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/BlockProgram.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/BlockProgram.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/CertCopy.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CertCopy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/Cert_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Cert_Tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/CommandRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CommandRunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/ConfigChanger_Subtab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ConfigChanger_Subtab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/ConrtolUSB.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ControlUSB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/ConrtolUSB_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ControlUSB_Tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/Control_Tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Control_Tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/CustomHeader.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CustomHeader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/CustomTreeWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/CustomTreeWidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/TreeEditor.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/TreeEditor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/TreeListWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/TreeListWidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/ControlUSB.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ControlUSB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/GetInfoSessinonWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/GetInfoSessinonWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Getsessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Getsessions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/SetImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/SetImage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/scenarioWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/ScenarioWidget.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +58,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Brine.executor": "Debug",
+    "Python.SetImage.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -99,7 +89,9 @@
       <workItem from="1717420309996" duration="5202000" />
       <workItem from="1717487779564" duration="1604000" />
       <workItem from="1717489637710" duration="6566000" />
-      <workItem from="1717497723212" duration="12934000" />
+      <workItem from="1717497723212" duration="13729000" />
+      <workItem from="1718607356875" duration="136000" />
+      <workItem from="1718609076255" duration="14497000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -109,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717425511958</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some comments were added and it finally works!">
+      <option name="closed" value="true" />
+      <created>1717512272048</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717512272048</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,10 +128,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="some comments were added and it finally works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="some comments were added and it finally works!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Brine$main.coverage" NAME="main Coverage Results" MODIFIED="1717512157218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Brine$SetImage.coverage" NAME="SetImage Coverage Results" MODIFIED="1718624463150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Brine$main.coverage" NAME="main Coverage Results" MODIFIED="1718624466378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Brine$Brine.coverage" NAME="Brine Coverage Results" MODIFIED="1717490482555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

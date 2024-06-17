@@ -53,8 +53,7 @@ class BlockProgram(QWidget):
     # Метод для поиска установленных пакетов на выбранных хостах
     def search_repo_user(self):
         self.btn_search_repo_user.setEnabled(False)
-        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
         salt_command = f"salt -L '{hosts}' cmd.run_stdout 'dpkg --get-selections'"
         self.thread = CommandRunner(salt_command, self)
         self.thread.finished.connect(self.showSelectedItems)
@@ -106,8 +105,7 @@ class BlockProgram(QWidget):
             self.result_list.clear()
             self.result_list.addItem(item)
             commands = ' '.join([f'$(readlink -f $(which {item}))' for item in selected_items])
-            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cmd.run 'setfacl -m u:{user_name}:--- {commands}  &&  getfacl {commands} | grep {user_name} || echo \"Произошла ошибка\"'"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)

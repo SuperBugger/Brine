@@ -61,8 +61,7 @@ class ControlUSB(QWidget):
     # Метод для блокировки USB-хранилищ
     def block_usb(self):
         self.block_button.setEnabled(False)
-        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
         salt_command = f"salt -L '{hosts}' state.apply brine.usb_rules pillar='{{\"turn\":\"1\"}}'"
         self.thread = CommandRunner(salt_command, self)
         self.thread.finished.connect(self.show_result)
@@ -71,8 +70,7 @@ class ControlUSB(QWidget):
     # Метод для разблокировки USB-хранилищ
     def unblock_usb(self):
         self.unblock_button.setEnabled(False)
-        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
         salt_command = f"salt -L '{hosts}' state.apply brine.usb_rules pillar='{{\"turn\":\"0\"}}'"
         self.thread = CommandRunner(salt_command, self)
         self.thread.finished.connect(self.show_result)

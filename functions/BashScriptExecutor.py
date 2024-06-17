@@ -103,8 +103,7 @@ class BashScriptExecutor(QWidget):
             self.destination_path = os.path.join(saltstack_path, self.script_filename)
             shutil.copy(self.script_path, self.destination_path)
 
-            # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+            hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
             salt_command = f"salt -L '{hosts}' cmd.script salt://{self.script_filename}"
             self.thread = CommandRunner(salt_command, self)
             self.thread.finished.connect(self.show_result)

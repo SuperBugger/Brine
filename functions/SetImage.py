@@ -1,5 +1,4 @@
 import os
-import os
 import shutil
 
 from PyQt5.QtCore import Qt

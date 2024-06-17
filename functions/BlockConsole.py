@@ -56,8 +56,7 @@ class BlockConsole(QWidget):
     # Метод для изменения оболочки пользователя
     def toggle_shell(self, new_shell):
         user_name = self.username_input.text()
-        # Исправлено self.tree_widget.tree_widget.invisibleRootItem() на self.tree_widget.invisibleRootItem()
-        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.invisibleRootItem())))
+        hosts = ','.join(map(str, self.getSelectedItems(self.tree_widget.tree_widget.invisibleRootItem())))
         if hosts and user_name:
             salt_command = f"salt -L '{hosts}' cmd.run_stdout 'sudo usermod -s {new_shell} {user_name} && echo \"Команда успешно выполнена\" || echo \"Произошла ошибка\"'"
             self.thread = CommandRunner(salt_command, self)
